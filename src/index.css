@@ -115,7 +115,7 @@ body {
   }
 
   #window-header {
-    @apply flex items-center justify-between rounded-t-lg border-b border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-400 select-none;
+    @apply flex cursor-default items-center justify-between rounded-t-lg border-b border-gray-200 bg-gray-50 px-4 py-3 text-sm text-gray-400 select-none;
   }
 
   #safari {

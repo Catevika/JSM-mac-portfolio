@@ -1,8 +1,8 @@
-import React, { type ComponentProps, useLayoutEffect, useRef } from 'react';
-import useWindowStore from '@/store/window';
-import gsap from 'gsap';
-import { useGSAP } from '@gsap/react';
-import { Draggable } from 'gsap/Draggable';
+import React, { type ComponentProps, useLayoutEffect, useRef } from "react";
+import useWindowStore from "@/store/window";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { Draggable } from "gsap/Draggable";
 
 const WindowWrapper = (Component: React.FC, windowKey: string) => {
   const Wrapped = (props: ComponentProps<typeof Component>) => {
@@ -15,7 +15,9 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
       const el = ref.current;
       if (!el) return;
       gsap.registerPlugin(Draggable);
-      const [instance] = Draggable.create(el, { onPress: () => focusWindow(windowKey) });
+      const [instance] = Draggable.create(el, {
+        onPress: () => focusWindow(windowKey),
+      });
       return () => instance.kill();
     }, []);
 
@@ -24,8 +26,12 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
       const el = ref.current;
       if (!el || !isOpen) return;
 
-      el.style.display = 'block';
-      gsap.fromTo(el, {scale: 0.8, opacity: 0, y:40}, {scale: 1, opacity: 1, y: 0, duration: 0.4, ease: 'power3.out'});
+      el.style.display = "block";
+      gsap.fromTo(
+        el,
+        { scale: 0.8, opacity: 0, y: 40 },
+        { scale: 1, opacity: 1, y: 0, duration: 0.4, ease: "power3.out" },
+      );
     }, [isOpen]);
 
     // Close window with useLayoutEffect
@@ -33,12 +39,12 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
       const el = ref.current;
       if (!el) return;
 
-      el.style.display = isOpen ? 'block' : 'none';
+      el.style.display = isOpen ? "block" : "none";
     }, [isOpen]);
 
     return (
       <section
-        className='absolute'
+        className="absolute"
         id={windowKey}
         onClick={() => focusWindow(windowKey)}
         ref={ref}
@@ -49,7 +55,7 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
     );
   };
 
-  Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || 'Component'})`;
+  Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || "Component"})`;
   return Wrapped;
 };
 

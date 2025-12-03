@@ -15,11 +15,12 @@ export const useWindowStore = create<WindowStore>()(
       win.zIndex = state.nextZIndex;
       win.data = data ?? win.data;
       state.nextZIndex++;
+
+      win.zIndex = state.nextZIndex;
     }),
     closeWindow: (windowKey: string) => set((state) => {
       const win = state.windows[windowKey];
       if (!win) return;
-
       win.isOpen = false;
       win.zIndex = INITIAL_Z_INDEX;
       win.data = null;
