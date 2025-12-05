@@ -3,7 +3,7 @@ import SafariWindow from "@/windows/Safari";
 import ResumeWindow from "@/windows/Resume";
 import FinderWindow from "@/windows//Finder";
 import TextWindow from "@/windows/TextView";
-import ImageVindow from "@/windows/ImageView";
+import ImageWindow from "@/windows/ImageView";
 import ContactWindow from "@/windows/Contact";
 import GalleryWindow from "@/windows/Photos";
 
@@ -14,7 +14,7 @@ export {
   ResumeWindow,
   FinderWindow,
   TextWindow,
-  ImageVindow,
+  ImageWindow,
   ContactWindow,
   GalleryWindow,
 };

@@ -7,7 +7,7 @@ import {
   TerminalWindow,
   TextWindow,
   GalleryWindow,
-  ImageVindow,
+  ImageWindow,
 } from "@/windows";
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
       <ResumeWindow />
       <FinderWindow />
       <TextWindow />
-      <ImageVindow />
+      <ImageWindow />
       <ContactWindow />
       <GalleryWindow />
 
