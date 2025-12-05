@@ -1,4 +1,4 @@
-import { Dock, Navbar, Welcome } from "@/components";
+import { Dock, Home, Navbar, Welcome } from "@/components";
 import {
   ContactWindow,
   FinderWindow,
@@ -6,6 +6,7 @@ import {
   SafariWindow,
   TerminalWindow,
   TextWindow,
+  GalleryWindow,
   ImageVindow,
 } from "@/windows";
 
@@ -23,6 +24,9 @@ const App = () => {
       <TextWindow />
       <ImageVindow />
       <ContactWindow />
+      <GalleryWindow />
+
+      <Home />
     </main>
   );
 };

@@ -45,6 +45,7 @@ export type Location = {
   description?: string[];
   href?: string;
   imageUrl?: string;
+  windowPosition?: string;
   children?: Location[];
 };
 
@@ -77,4 +78,15 @@ export type Social = {
   icon: string;
   link: string;
   text: string;
+};
+
+export type PhotoLink = {
+  id: number;
+  icon: string;
+  title: string;
+};
+
+export type GalleryPhoto = {
+  id: number;
+  img: string;
 };

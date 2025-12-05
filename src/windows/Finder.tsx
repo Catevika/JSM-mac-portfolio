@@ -35,14 +35,11 @@ const Finder = () => {
             onClick={() => {
               setActiveLocation(item);
             }}
+            className={clsx(
+              item.id === activeLocation.id ? "active" : "not-active",
+            )}
           >
-            <img
-              src={item.icon}
-              alt={item.name}
-              className={clsx(
-                item.id === activeLocation.id ? "active" : "not-active",
-              )}
-            />
+            <img src={item.icon} alt={item.name} />
             <p className="truncate text-sm font-medium">{item.name}</p>
           </li>
         ))}

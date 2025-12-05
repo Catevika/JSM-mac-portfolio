@@ -4,7 +4,6 @@
 
 html,
 body {
-  width: 100dvw;
   overflow: hidden;
   height: 100dvh;
   background-image: url("/images/wallpaper.png");
@@ -33,7 +32,7 @@ body {
 
 @layer base {
   main {
-    @apply h-dvh w-dvw overflow-hidden;
+    @apply h-dvh overflow-hidden;
   }
 
   nav {
@@ -144,7 +143,7 @@ body {
         }
 
         .content {
-          @apply col-span-10 space-y-3;
+          @apply col-span-10 flex flex-col gap-3;
 
           p {
             @apply text-xs text-gray-500;
@@ -177,7 +176,7 @@ body {
       }
 
       .content {
-        @apply my-5 space-y-1 border-y border-dashed py-5;
+        @apply my-5 flex flex-col gap-1 border-y border-dashed py-5;
 
         li {
           .check {
@@ -195,7 +194,7 @@ body {
       }
 
       .footnote {
-        @apply space-y-1 text-[#00A154];
+        @apply flex flex-col gap-1 text-[#00A154];
 
         p {
           @apply flex items-center;
@@ -226,7 +225,7 @@ body {
         @apply w-60 origin-center rounded-lg p-3 transition-all duration-300 hover:-translate-y-0.5 hover:scale-105;
 
         a {
-          @apply space-y-5;
+          @apply flex flex-col gap-5;
         }
 
         p {
@@ -248,7 +247,7 @@ body {
 
       ul {
         li {
-          @apply flex cursor-pointer items-center gap-2 space-y-1 rounded-md px-3 py-2 transition-colors;
+          @apply flex cursor-pointer flex-col items-center gap-2 rounded-md px-3 py-2 transition-colors;
 
           &:first-child {
             @apply bg-blue-100 text-blue-700;
@@ -310,14 +309,14 @@ body {
     @apply absolute top-20 left-40 w-3xl overflow-hidden rounded-xl shadow-2xl drop-shadow-2xl;
 
     .sidebar {
-      @apply flex w-48 flex-col space-y-3 border-r border-gray-200 bg-gray-50 p-5;
+      @apply flex w-70 flex-col gap-3 border-r border-gray-200 bg-gray-50 p-5;
 
       h3 {
         @apply mb-1 text-xs font-medium text-gray-400;
       }
 
       ul {
-        @apply space-y-1;
+        @apply flex flex-col gap-1;
 
         .active {
           @apply bg-blue-100 text-blue-700;

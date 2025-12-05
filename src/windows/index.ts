@@ -5,6 +5,7 @@ import FinderWindow from "@/windows//Finder";
 import TextWindow from "@/windows/TextView";
 import ImageVindow from "@/windows/ImageView";
 import ContactWindow from "@/windows/Contact";
+import GalleryWindow from "@/windows/Photos";
 
 
 export {
@@ -15,4 +16,5 @@ export {
   TextWindow,
   ImageVindow,
   ContactWindow,
+  GalleryWindow,
 };
