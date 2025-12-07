@@ -9,7 +9,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = new URL(
   // for development:
   // "pdfjs-dist/build/pdf.worker.min.mjs",
   // For deployment:
-  `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`, 
+  `https:/unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`, 
   import.meta.url,
 ).toString();
 
