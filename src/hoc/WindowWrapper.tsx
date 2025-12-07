@@ -16,7 +16,7 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
       if (!el) return;
       gsap.registerPlugin(Draggable);
       const [instance] = Draggable.create(el, {
-        onPress: () => focusWindow(windowKey),
+        onPress: () => {focusWindow(windowKey)},
       });
       return () => instance.kill();
     }, []);
@@ -46,7 +46,7 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
       <section
         className="absolute"
         id={windowKey}
-        onClick={() => focusWindow(windowKey)}
+        onClick={() => {focusWindow(windowKey)}}
         ref={ref}
         style={{ zIndex }}
       >
@@ -55,7 +55,7 @@ const WindowWrapper = (Component: React.FC, windowKey: string) => {
     );
   };
 
-  Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || "Component"})`;
+  Wrapped.displayName = `WindowWrapper(${Component.displayName || Component.name || 'Component'})`;
   return Wrapped;
 };
 

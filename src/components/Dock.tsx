@@ -18,7 +18,7 @@ const Dock = () => {
     const animateIcon = (mouseX: number) => {
       const { left } = dock.getBoundingClientRect();
 
-      icons.forEach((icon) => {
+      for (const icon of icons) {
         const { left: iconLeft, width } = icon.getBoundingClientRect();
         const center = iconLeft - left + width / 2;
         const distance = Math.abs(mouseX - center);
@@ -30,7 +30,7 @@ const Dock = () => {
           duration: 0.2,
           ease: "power2.out",
         });
-      });
+      }
     };
     const handleMouseMove = (event: MouseEvent) => {
       const { left } = dock.getBoundingClientRect();
@@ -38,14 +38,14 @@ const Dock = () => {
     };
 
     const resetIcons = () => {
-      icons.forEach((icon) =>
+      for (const icon of icons) {
         gsap.to(icon, {
           scale: 1,
           y: 0,
           duration: 0.3,
           ease: "power1.out",
-        }),
-      );
+        });
+      }
     };
 
     dock.addEventListener("mousemove", handleMouseMove);
@@ -61,7 +61,6 @@ const Dock = () => {
     if (!app.canOpen) return;
 
     const window = windows[app.id];
-    if (!window) return;
 
     if (window.isOpen) {
       closeWindow(app.id);
@@ -83,7 +82,7 @@ const Dock = () => {
               data-tooltip-content={name}
               data-tooltip-delay-show={150}
               disabled={!canOpen}
-              onClick={() => toggleApp({ id, canOpen })}
+              onClick={() => {toggleApp({ id, canOpen })}}
             >
               <img
                 src={`/images/${icon}`}

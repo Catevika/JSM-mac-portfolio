@@ -20,7 +20,7 @@ const Finder = () => {
       } else if (["fig", "url"].includes(item.fileType!) && item.href) {
         window.open(item.href, "_blank");
       } else {
-        openWindow(`${item.fileType}${item.kind}`, item);
+        openWindow(item.fileType! + item.kind, item);
       }
     }
   };
@@ -64,7 +64,7 @@ const Finder = () => {
             <li
               key={item.id}
               className={item.position}
-              onClick={() => openItem(item)}
+              onClick={() => {openItem(item)}}
             >
               <img src={item.icon} alt={item.name} />
               <p>{item.name}</p>

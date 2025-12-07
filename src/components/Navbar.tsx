@@ -13,7 +13,7 @@ const Navbar = () => {
         <p className="font-bold">My portfolio by Catevika</p>
         <ul>
           {navLinks.map(({ id, name, type }: NavLink) => (
-            <li key={id} onClick={() => openWindow(type)}>
+            <li key={id} onClick={() => {openWindow(type)}}>
               {name}
             </li>
           ))}
@@ -24,7 +24,7 @@ const Navbar = () => {
         <ul>
           {navIcons.map(({ id, img }: NavIcon) => (
             <li key={id}>
-              <img src={img} alt={`Icon ${id}`} className="icon-hover" />
+              <img src={img} alt={`Icon ${id.toString()}`} className="icon-hover" />
             </li>
           ))}
         </ul>

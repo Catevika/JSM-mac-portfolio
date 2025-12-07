@@ -16,14 +16,21 @@ const FONT_WEIGHTS = {
 };
 
 const renderText = (text: string, className: string, baseWeight = 400) => {
-  return [...text].map((char, index) => (
-    <span key={index} className={className} style={{ fontVariationSettings: `"wght" ${baseWeight}` }}>{char === ' ' ? '\u00A0' : char}</span>
+  const segmenter = new Intl.Segmenter('en', { granularity: 'grapheme' });
+  
+  return Array.from(segmenter.segment(text)).map(({ segment }, index) => (
+    <span
+      key={index}
+      className={className}
+      style={{ fontVariationSettings: `"wght" ${baseWeight.toString()}` }}
+    >
+      {segment === ' ' ? '\u00A0' : segment}
+    </span>
   ));
 };
 
-const setupTextHover = (container: HTMLElement, type: 'subtitle' | 'title') => {
-  if (!container) return () => { };
 
+const setupTextHover = (container: HTMLElement, type: 'subtitle' | 'title') => {
   const letters = container.querySelectorAll('span');
   const { min, max, default: base } = FONT_WEIGHTS[type];
 
@@ -31,7 +38,7 @@ const setupTextHover = (container: HTMLElement, type: 'subtitle' | 'title') => {
     return gsap.to(letter, {
       duration,
       ease: 'power2.out',
-      fontVariationSettings: `"wght" ${weight}`,
+      fontVariationSettings: `"wght" ${weight.toString()}`,
     });
   };
 
@@ -39,18 +46,18 @@ const setupTextHover = (container: HTMLElement, type: 'subtitle' | 'title') => {
     const { left } = container.getBoundingClientRect();
     const mouseX = event.clientX - left;
 
-    letters.forEach((letter) => {
+    for(const letter of letters) {
       const { left: l, width: w } = letter.getBoundingClientRect();
       const distance = Math.abs(mouseX - (l - left + w / 2));
       const intensity = Math.exp(-(distance ** 2) / 20000);
       animateLetter(letter, min + (max - min) * intensity);
-    });
+    }
   };
 
   const handleMouseLeave = () => {
-    letters.forEach((letter) => {
+    for(const letter of letters) {
       animateLetter(letter, base, 0.3);
-    });
+    };
   };
 
   container.addEventListener('mousemove', handleMouseMove);

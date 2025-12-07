@@ -27,7 +27,7 @@ const Home = () => {
           <li
             key={project.id}
             className={clsx("group folder", project.windowPosition)}
-            onClick={() => handleOpenProjectFinder(project)}
+            onClick={() => {handleOpenProjectFinder(project)}}
           >
             <img src={project.icon} alt={project.name} />
             <p>{project.name}</p>

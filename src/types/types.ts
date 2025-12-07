@@ -1,15 +1,15 @@
-export type NavLink = {
+export interface NavLink {
   id: number;
   name: string;
   type: string;
 };
 
-export type NavIcon = {
+export interface NavIcon {
   id: number;
   img: string;
 };
 
-export type WindowData = {
+export interface WindowData {
   isOpen: boolean;
   zIndex: number;
   data: unknown;
@@ -17,7 +17,7 @@ export type WindowData = {
 
 export type WindowConfig = Record<string, WindowData>;
 
-export type WindowStore = {
+export interface WindowStore {
   windows: WindowConfig;
   nextZIndex: number;
   openWindow: (windowKey: string, data?: unknown) => void;
@@ -25,14 +25,14 @@ export type WindowStore = {
   focusWindow: (windowKey: string) => void;
 };
 
-export type DockApp = {
+export interface DockApp {
   id: string;
   name: string;
   icon: string;
   canOpen: boolean;
 };
 
-export type Location = {
+export interface Location {
   id: number;
   type?: string;
   name: string;
@@ -49,12 +49,12 @@ export type Location = {
   children?: Location[];
 };
 
-export type LocationStore = {
+export interface LocationStore {
   activeLocation: Location;
   setActiveLocation: (location: Location) => void;
   resetActiveLocation?: (location?: Location) => void;
 };
-export type TextFileData = {
+export interface TextFileData {
   id: number;
   name: string;
   image?: string;
@@ -62,7 +62,7 @@ export type TextFileData = {
   description?: string[];
 };
 
-export type ImageFileData = {
+export interface ImageFileData {
   id: number;
   name: string;
   icon?: string;
@@ -72,7 +72,7 @@ export type ImageFileData = {
   imageUrl?: string;
 };
 
-export type Social = {
+export interface Social {
   id: number;
   bg: string;
   icon: string;
@@ -80,13 +80,13 @@ export type Social = {
   text: string;
 };
 
-export type PhotoLink = {
+export interface PhotoLink {
   id: number;
   icon: string;
   title: string;
 };
 
-export type GalleryPhoto = {
+export interface GalleryPhoto {
   id: number;
   img: string;
 };
