@@ -4,7 +4,10 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { Draggable } from "gsap/Draggable";
 
-const WindowWrapper = (Component: React.FC, windowKey: string) => {
+const WindowWrapper = <Props extends object,>(
+  Component: React.FC<Props>,
+  windowKey: string,
+) => {
   const Wrapped = (props: ComponentProps<typeof Component>) => {
     const { focusWindow, windows } = useWindowStore();
     const { isOpen, zIndex } = windows[windowKey];

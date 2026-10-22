@@ -349,6 +349,30 @@ body {
     }
   }
 
+  #trash {
+    @apply absolute top-20 left-40 w-3xl overflow-hidden rounded-xl bg-white shadow-2xl drop-shadow-2xl;
+
+    .trash {
+      @apply min-h-80 bg-white;
+    }
+
+    .content {
+      @apply flex flex-wrap content-start gap-8 p-8;
+
+      li {
+        @apply flex w-40 cursor-pointer flex-col items-center gap-3;
+
+        img {
+          @apply size-16 object-contain object-center transition-transform hover:scale-105;
+        }
+
+        p {
+          @apply w-40 text-center text-sm font-medium;
+        }
+      }
+    }
+  }
+
   #txtfile {
     @apply absolute top-36 right-32 w-md overflow-hidden rounded-xl bg-white shadow-2xl drop-shadow-2xl;
 

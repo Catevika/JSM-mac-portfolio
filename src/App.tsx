@@ -3,8 +3,9 @@ import {
   ContactWindow,
   FinderWindow,
   ResumeWindow,
-  SafariWindow,
+  SafariWindow, 
   TerminalWindow,
+  TrashWindow,
   TextWindow,
   GalleryWindow,
   ImageWindow,
@@ -25,6 +26,7 @@ const App = () => {
       <ImageWindow />
       <ContactWindow />
       <GalleryWindow />
+      <TrashWindow />
 
       <Home />
     </main>

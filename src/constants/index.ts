@@ -38,39 +38,39 @@ const navIcons = [
 const dockApps = [
   {
     id: "finder",
-    name: "Portfolio", // was "Finder"
+    name: "Finder",
     icon: "finder.png",
     canOpen: true,
   },
   {
     id: "safari",
-    name: "Articles", // was "Safari"
+    name: "Safari",
     icon: "safari.png",
     canOpen: true,
   },
   {
     id: "photos",
-    name: "Gallery", // was "Photos"
+    name: "Gallery",
     icon: "photos.png",
     canOpen: true,
   },
   {
     id: "contact",
-    name: "Contact", // or "Get in touch"
+    name: "Get in touch",
     icon: "contact.png",
     canOpen: true,
   },
   {
     id: "terminal",
-    name: "Skills", // was "Terminal"
+    name: "Terminal",
     icon: "terminal.png",
     canOpen: true,
   },
   {
     id: "trash",
-    name: "Archive", // was "Trash"
+    name: "Trash",
     icon: "trash.png",
-    canOpen: false,
+    canOpen: true,
   },
 ];
 
@@ -204,6 +204,20 @@ const gallery = [
   },
 ];
 
+const trashes =[
+  {
+    id: 1,
+    name: "trash1.png",
+    imageUrl: "/images/trash-1.png",
+  },
+  {
+    id: 2,
+    name: "trash2.png",
+    imageUrl: "/images/trash-2.png",
+  },
+
+]
+
 export {
   navLinks,
   navIcons,
@@ -213,6 +227,7 @@ export {
   socials,
   photosLinks,
   gallery,
+  trashes
 };
 
 const WORK_LOCATION = {
@@ -225,7 +240,7 @@ const WORK_LOCATION = {
     // ▶ Project 1
     {
       id: 5,
-      name: "Nike Ecommerce",
+      name: "Nike E-commerce",
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
@@ -468,7 +483,7 @@ const TRASH_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-10 left-10",
+      position: "top-50 left-50",
       imageUrl: "/images/trash-1.png",
     },
     {
@@ -477,7 +492,7 @@ const TRASH_LOCATION = {
       icon: "/images/image.png",
       kind: "file",
       fileType: "img",
-      position: "top-40 left-80",
+      position: "top-70 left-70",
       imageUrl: "/images/trash-2.png",
     },
   ],
@@ -499,6 +514,7 @@ const WINDOW_CONFIG = {
   safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  trash: {isOpen: false,  zIndex: INITIAL_Z_INDEX, data: null},
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };

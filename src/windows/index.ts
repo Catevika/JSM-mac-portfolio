@@ -6,6 +6,7 @@ import TextWindow from "@/windows/TextView";
 import ImageWindow from "@/windows/ImageView";
 import ContactWindow from "@/windows/Contact";
 import GalleryWindow from "@/windows/Photos";
+import TrashWindow from "@/windows/Trash";
 
 
 export {
@@ -17,4 +18,5 @@ export {
   ImageWindow,
   ContactWindow,
   GalleryWindow,
+  TrashWindow
 };

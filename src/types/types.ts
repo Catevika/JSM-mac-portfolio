@@ -90,3 +90,9 @@ export interface GalleryPhoto {
   id: number;
   img: string;
 };
+
+export interface Trash {
+  id: number;
+  name: string;
+  imageUrl: string;
+};
